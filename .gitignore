@@ -4,6 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Custom - Maurydza
+Build
 Library
 Logs
 Packages
@@ -12,6 +13,7 @@ UserSettings
 .vsconfig
 Assembly-CSharp.csproj
 GruzGame.slnx
+*.meta
 
 # User-specific files
 *.rsuser
