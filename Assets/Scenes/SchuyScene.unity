@@ -131,8 +131,8 @@ GameObject:
   - component: {fileID: 173364164}
   - component: {fileID: 173364163}
   - component: {fileID: 173364166}
-  - component: {fileID: 173364167}
   - component: {fileID: 173364168}
+  - component: {fileID: 173364169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerRigidbody: {fileID: 173364166}
-  speed: 400
-  sprintSpeed: 600
+  speed: 4000
+  sprintSpeed: 6000
   maxStamina: 100
   staminaRegenMultiplier: 12
   staminaUsageMultiplier: 20
@@ -208,8 +208,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.14618193, g: 0.29237732, b: 0.6886792, a: 1}
+  m_Sprite: {fileID: 6551696340965002949, guid: 0bf37338db439c346bd29b8c435a1f88, type: 3}
+  m_Color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -228,8 +228,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 235176293}
   m_Father: {fileID: 0}
@@ -261,8 +261,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &173364167
-CircleCollider2D:
+--- !u!114 &173364168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173364162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92205b116ae3d904c94489d6e1d510a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerRigidbody: {fileID: 173364166}
+--- !u!70 &173364169
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -295,21 +308,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &173364168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173364162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92205b116ae3d904c94489d6e1d510a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  playerRigidbody: {fileID: 173364166}
+  m_Offset: {x: 0, y: -0.2576025}
+  m_Size: {x: 0.32, y: 0.35479552}
+  m_Direction: 0
 --- !u!1 &235176292
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,9 +358,9 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.831
+  m_FalloffIntensity: 0.809
   m_Color: {r: 0.56697226, g: 0.7377339, b: 0.8773585, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1.5
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -380,8 +381,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 96.40167
-  m_PointLightOuterAngle: 218.40994
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 20
   m_PointLightOuterRadius: 20
   m_ShapeLightParametricSides: 5
@@ -719,7 +720,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
