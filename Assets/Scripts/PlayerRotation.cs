@@ -1,24 +1,53 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+enum RotationDirection
+{ 
+    Left,
+    Right
+}
+
 public class PlayerRotation : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D playerRigidbody;
-    private InputAction pointer;
-    private Vector2 pointerCoords;
-    private float playerPointerAngle;
+    private RotationDirection rotationDirection = RotationDirection.Left;
 
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pointer = InputSystem.actions.FindAction("Look");
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        pointerCoords = Camera.main.ScreenToWorldPoint(pointer.ReadValue<Vector2>());
-        playerPointerAngle = Mathf.Atan2(pointerCoords.y - playerRigidbody.position.y, pointerCoords.x - playerRigidbody.position.x) * Mathf.Rad2Deg - 90;
-        playerRigidbody.SetRotation(playerPointerAngle);
+        if ( playerRigidbody.linearVelocity != Vector2.zero )
+        {
+            if( rotationDirection == RotationDirection.Left )
+            {
+                playerRigidbody.rotation += 0.2f;
+
+                if (playerRigidbody.rotation > 10f)
+                {
+                    rotationDirection = RotationDirection.Right;
+                }
+            }
+
+            if (rotationDirection == RotationDirection.Right)
+            {
+                playerRigidbody.rotation -= 0.2f;
+
+                if (playerRigidbody.rotation < -10f)
+                {
+                    rotationDirection = RotationDirection.Left;
+                }
+            }
+        }
+        else
+        {
+            playerRigidbody.rotation = 0f;
+        }
+        
     }
 }
