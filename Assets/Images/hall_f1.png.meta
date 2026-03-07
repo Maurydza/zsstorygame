@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0bf37338db439c346bd29b8c435a1f88
+guid: b3b05c6615b74af4e9db92fff222750d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6551696340965002949
-    second: zmuda_0
+      213: 4977756074957111077
+    second: hall_f1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zmuda_0
+      name: hall_f1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 87
+        width: 2456
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ce02771c1d4cea50800000000000000
-      internalID: 6551696340965002949
+      spriteID: 52f7c52e6ca841540800000000000000
+      internalID: 4977756074957111077
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      zmuda_0: 6551696340965002949
+      hall_f1_0: 4977756074957111077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
