@@ -10,6 +10,8 @@ enum RotationDirection
 public class PlayerRotation : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private float wobbleSpeed;
+    [SerializeField] private float wobbleSprintSpeed;
     private RotationDirection rotationDirection = RotationDirection.Left;
 
     
@@ -20,13 +22,20 @@ public class PlayerRotation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if ( playerRigidbody.linearVelocity != Vector2.zero )
         {
             if( rotationDirection == RotationDirection.Left )
             {
-                playerRigidbody.rotation += 0.2f;
+                if (PlayerMovement.isSprinting)
+                {
+                    playerRigidbody.rotation += wobbleSprintSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    playerRigidbody.rotation += wobbleSpeed * Time.deltaTime;
+                }
 
                 if (playerRigidbody.rotation > 10f)
                 {
@@ -36,7 +45,14 @@ public class PlayerRotation : MonoBehaviour
 
             if (rotationDirection == RotationDirection.Right)
             {
-                playerRigidbody.rotation -= 0.2f;
+                if (PlayerMovement.isSprinting)
+                {
+                    playerRigidbody.rotation -= wobbleSprintSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    playerRigidbody.rotation -= wobbleSpeed * Time.deltaTime;
+                }
 
                 if (playerRigidbody.rotation < -10f)
                 {

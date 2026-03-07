@@ -14,26 +14,30 @@ public class PlayerMovement : MonoBehaviour
     private float stamina;
     private InputAction moveAction;
     private InputAction sprintAction;
+    public static bool isSprinting;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRigidbody.freezeRotation = true;
+        isSprinting = false;
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (sprintAction.IsPressed())
         {
             if (stamina > 0)
             {
                 playerRigidbody.linearVelocity = moveAction.ReadValue<Vector2>() * sprintSpeed * Time.deltaTime;
+                isSprinting = true;
             }
             else
             {
                 playerRigidbody.linearVelocity = moveAction.ReadValue<Vector2>() * speed * Time.deltaTime;
+                isSprinting = false;
             }
 
             if (playerRigidbody.linearVelocity != Vector2.zero && stamina > 0)
@@ -43,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            isSprinting = false;
             playerRigidbody.linearVelocity = moveAction.ReadValue<Vector2>() * speed * Time.deltaTime;
 
             if (stamina < maxStamina)
