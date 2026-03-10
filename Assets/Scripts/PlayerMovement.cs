@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -61,5 +62,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         staminaLevelText.text = "Stamina: " + ((int)stamina).ToString();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "director_in")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+        }
+        else if(collision.tag == "director_out"){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
 }
