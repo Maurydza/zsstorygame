@@ -24,6 +24,7 @@ public class NpcNeutral : MonoBehaviour
     {
         // for pressing E to interact with the npc
         interraction = InputSystem.actions.FindAction("Interact");
+        playerIsClose = false;
     }
     void Update()
     {
