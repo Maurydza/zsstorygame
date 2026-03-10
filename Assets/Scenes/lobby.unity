@@ -1648,7 +1648,7 @@ MonoBehaviour:
   - Powodzenia!
   continueButton: {fileID: 1792852365}
   wordSpeed: 0.04
-  playerIsClose: 1
+  playerIsClose: 0
 --- !u!212 &868517889
 SpriteRenderer:
   serializedVersion: 2
