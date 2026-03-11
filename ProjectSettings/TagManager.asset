@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Item
   - director_in
   - director_out
   layers:
