@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI selectedHandText;
     private static Item leftHandItem;
     private static Item rightHandItem;
     private bool rightHandSelected;
@@ -31,6 +33,14 @@ public class Inventory : MonoBehaviour
         if (changeHandAction.WasPressedThisFrame())
         {
             rightHandSelected = !rightHandSelected;
+            if (rightHandSelected)
+            {
+                selectedHandText.text = "Ręka: prawa";
+            }
+            else
+            {
+                selectedHandText.text = "Ręka: lewa";
+            }
         }
 
         if (lkeyAction.WasPressedThisFrame())
