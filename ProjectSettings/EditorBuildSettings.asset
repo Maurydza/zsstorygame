@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SchuyScene.unity
+    path: Assets/Scenes/lobby.unity
     guid: c1828e394e32f1949a1221e8d37a7dc6
+  - enabled: 1
+    path: Assets/Scenes/dyrektor.unity
+    guid: 90c6ec472a4428f4f9339fcbde0bbc02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
