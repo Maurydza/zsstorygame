@@ -72,5 +72,25 @@ public class PlayerMovement : MonoBehaviour
         else if(collision.tag == "director_out"){
             SceneManager.LoadScene(0);
         }
+        else if (collision.tag == "s49_in")
+        {
+            SceneManager.LoadScene(2);
+        }
+        else if (collision.tag == "s59_in")
+        {
+            SceneManager.LoadScene(3);
+        }
+        else if (collision.tag == "s69_in")
+        {
+            SceneManager.LoadScene(4);
+        }
+        else if (collision.tag == "sP1_in")
+        {
+            SceneManager.LoadScene(5);
+        }
+        else if (collision.tag == "sP2_in")
+        {
+            SceneManager.LoadScene(6);
+        }
     }
 }

@@ -7,6 +7,11 @@ TagManager:
   - Item
   - director_in
   - director_out
+  - s49_in
+  - s59_in
+  - s69_in
+  - sP1_in
+  - sP2_in
   layers:
   - Default
   - TransparentFX
