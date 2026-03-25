@@ -67,10 +67,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.tag == "director_in")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+            SceneManager.LoadScene(1); // Load pryncypała scene
         }
         else if(collision.tag == "director_out"){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(0);
         }
     }
 }
