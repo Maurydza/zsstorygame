@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Stats stats;
+
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private float speed;
     [SerializeField] private float sprintSpeed;
@@ -19,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        stats = GetComponent<Stats>();
+
         playerRigidbody.freezeRotation = true;
         isSprinting = false;
         moveAction = InputSystem.actions.FindAction("Move");
