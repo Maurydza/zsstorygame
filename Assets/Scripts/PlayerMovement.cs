@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigidbody.freezeRotation = true;
         isSprinting = false;
+        stamina = 70;
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
     }
