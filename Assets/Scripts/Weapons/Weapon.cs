@@ -1,19 +1,42 @@
-using System;
 using UnityEngine;
-public abstract class Weapon : MonoBehaviour
+
+public abstract class Weapon : Item
 {
-    public int AvailableAmmo {  get; set; }
+    public int ammo = 10;
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float bulletSpeed = 15f;
 
-    public Weapon(int AvailableAmmo)
+    public override void Use()
     {
-        this.AvailableAmmo = AvailableAmmo;
+        Shoot();
     }
 
-    public void UseWeapon()
+    void Shoot()
     {
-        // bazowa implementacja
-        Console.Write("Pif Paf");
+        if (ammo <= 0)
+        {
+            Debug.Log("Brak amunicji");
+            return;
+        }
+
+        ammo--;
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0f;
+
+        Vector2 direction = (mousePos - firePoint.position).normalized;
+
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        Bullet b = bullet.GetComponent<Bullet>();
+        b.SetDirection(direction);
+        b.speed = bulletSpeed;
+        b.damage = damage;
+
+        Sound();
     }
 
+    public float damage = 10f;
     public abstract void Sound();
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-class Item : MonoBehaviour
+public class Item : MonoBehaviour
 {
     [SerializeField] private string name;
     public Rigidbody2D itemRigidbody;
