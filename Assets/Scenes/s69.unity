@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 737293579}
   m_Layer: 0
   m_Name: LobbyDoor
-  m_TagString: director_out
+  m_TagString: s69_out
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

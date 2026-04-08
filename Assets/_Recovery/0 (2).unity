@@ -653,7 +653,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   selectedHandText: {fileID: 939197750}
-  playerObject: {fileID: 981213235}
 --- !u!70 &981213238
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -853,13 +852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8129d87f347dd489b2b325b4d82145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  itemsToSpawn:
-  - prefab: {fileID: 2588380726026426207, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}
-    position: {x: -50, y: -20, z: 0}
-    sceneIndex: 1
-  - prefab: {fileID: 2588380726026426207, guid: 700a2ad81d10c244c8e4259722e1f468, type: 3}
-    position: {x: 50, y: 20, z: 0}
-    sceneIndex: 0
 --- !u!1 &1229107836
 GameObject:
   m_ObjectHideFlags: 0

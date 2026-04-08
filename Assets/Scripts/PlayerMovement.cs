@@ -84,6 +84,11 @@ public class PlayerMovement : MonoBehaviour
             PlayerTeleport.targetSpawnID = "lobby_drzwi_dyr";
             SceneManager.LoadScene(0);
         }
+        else if (collision.tag == "s69_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_s69";
+            SceneManager.LoadScene(0);
+        }
         else if(collision.tag == "initialSpawnpoint")
         {
             PlayerTeleport.targetSpawnID = "initialSpawn";
