@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class PlayerFollow : MonoBehaviour
 {
+    [SerializeField] private GameObject cameraGameObject;
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float maxHorizontal;
     [SerializeField] private float maxVertical;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-
+        DontDestroyOnLoad(cameraGameObject);
     }
 
     // Update is called once per frame
