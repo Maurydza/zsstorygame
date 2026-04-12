@@ -101,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
         if(collision.tag == "money")
         {
             Money += 5;
-            Debug.Log("dodalo sie");
             collision.enabled = false;
             collision.GetComponent<Transform>().gameObject.SetActive(false);
             

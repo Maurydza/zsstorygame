@@ -412,7 +412,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6745028546578168173, guid: b58af3371b2e659429c04d8d64eef376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -695,6 +695,7 @@ MonoBehaviour:
   staminaRegenMultiplier: 12
   staminaUsageMultiplier: 20
   staminaLevelText: {fileID: 559449694}
+  moneyLevelText: {fileID: 1275795875}
 --- !u!212 &173364164
 SpriteRenderer:
   serializedVersion: 2
@@ -1146,11 +1147,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.11308336, y: 0.44711334}
+  m_Offset: {x: -0.16220272, y: 0.21787715}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1160,7 +1161,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.965414, y: 4.596028}
+  m_Size: {x: 6.063653, y: 5.0545}
   m_EdgeRadius: 0
 --- !u!212 &313053952
 SpriteRenderer:
@@ -4112,7 +4113,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6745028546578168173, guid: b58af3371b2e659429c04d8d64eef376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4235,7 +4236,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6745028546578168173, guid: b58af3371b2e659429c04d8d64eef376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5146,7 +5147,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6745028546578168173, guid: b58af3371b2e659429c04d8d64eef376, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
