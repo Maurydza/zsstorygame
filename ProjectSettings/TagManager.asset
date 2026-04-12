@@ -12,6 +12,7 @@ TagManager:
   - s69_in
   - sP1_in
   - sP2_in
+  - money
   layers:
   - Default
   - TransparentFX

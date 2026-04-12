@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction moveAction;
     private InputAction sprintAction;
     public static bool isSprinting;
+    public static int Money {  get; set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -93,5 +94,17 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(6);
         }
+
+        if(collision.tag == "money")
+        {
+            Money += 5;
+            Debug.Log("dodalo sie");
+            collision.enabled = false;
+            collision.GetComponent<Transform>().gameObject.SetActive(false);
+            
+
+
+        }
+
     }
 }
