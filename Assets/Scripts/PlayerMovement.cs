@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float staminaRegenMultiplier;
     [SerializeField] private float staminaUsageMultiplier;
     [SerializeField] TextMeshProUGUI staminaLevelText;
+    [SerializeField] TextMeshProUGUI moneyLevelText;
     private float stamina;
     private InputAction moveAction;
     private InputAction sprintAction;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         stamina = 70;
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
+        Money = 0;
     }
 
     // Update is called once per frame
@@ -64,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         staminaLevelText.text = "Stamina: " + ((int)stamina).ToString();
+        moneyLevelText.text = "Monety: " + Money.ToString();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
