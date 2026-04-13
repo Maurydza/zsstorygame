@@ -158,4 +158,9 @@ public class PlayerMovement : MonoBehaviour
     {
         stamina += amount;
     }
+
+    public int GetMoney()
+    {
+        return Money;
+    }
 }
