@@ -12,7 +12,12 @@ TagManager:
   - s69_in
   - sP1_in
   - sP2_in
-  - money
+  - initialSpawnpoint
+  - s69_out
+  - s59_out
+  - s49_out
+  - sP1_out
+  - sP2_out
   layers:
   - Default
   - TransparentFX
