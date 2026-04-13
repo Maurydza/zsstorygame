@@ -1,12 +1,16 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI selectedHandText;
+    [SerializeField] GameObject playerObject;
     private static Item leftHandItem;
     private static Item rightHandItem;
+    public static GameObject leftHandObject;
+    public static GameObject rightHandObject;
     private bool rightHandSelected;
     private InputAction lkeyAction;
     private InputAction rkeyAction;
@@ -67,6 +71,7 @@ public class Inventory : MonoBehaviour
                 {
                     rightHandItem.Drop();
                     rightHandItem = null;
+                    rightHandObject = null;
                 }
                 else
                 {
@@ -79,6 +84,7 @@ public class Inventory : MonoBehaviour
                 {
                     leftHandItem.Drop();
                     leftHandItem = null;
+                    leftHandObject = null;
                 }
                 else
                 {
@@ -100,6 +106,7 @@ public class Inventory : MonoBehaviour
                     {
                         rightHandItem = collision.GetComponent<Item>();
                         rightHandItem.PutInHand();
+                        rightHandObject = rightHandItem.gameObject;
                     }
                     else
                     {
@@ -119,6 +126,7 @@ public class Inventory : MonoBehaviour
                     {
                         leftHandItem = collision.GetComponent<Item>();
                         leftHandItem.PutInHand();
+                        leftHandObject = leftHandItem.gameObject;
                     }
                     else
                     {
@@ -135,7 +143,7 @@ public class Inventory : MonoBehaviour
 
     public static bool IsLHINull()
     {
-        if (leftHandItem  == null)
+        if (leftHandItem == null)
         {
             return true;
         }
