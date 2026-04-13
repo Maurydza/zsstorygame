@@ -316,8 +316,8 @@ MonoBehaviour:
   dialogueText: {fileID: 321155950}
   dialogueLines:
   - Witaj!
-  - "Musisz przynie\u015B\u0107 mi 5 artefakt\xF3w"
-  - "kt\xF3re zdob\u0119dziesz w walce z bossami w salach"
+  - "Musisz przynie\u015B\u0107 mi 5 artefakt\xF3w kt\xF3re zdob\u0119dziesz w walce
+    z nauczycielami w salach"
   - Powodzenia!
   continueButton: {fileID: 1917604241}
   wordSpeed: 0.04
