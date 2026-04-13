@@ -18,6 +18,7 @@ TagManager:
   - s49_out
   - sP1_out
   - sP2_out
+  - money
   layers:
   - Default
   - TransparentFX
