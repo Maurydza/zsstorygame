@@ -89,6 +89,26 @@ public class PlayerMovement : MonoBehaviour
             PlayerTeleport.targetSpawnID = "lobby_drzwi_s69";
             SceneManager.LoadScene(0);
         }
+        else if (collision.tag == "s59_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_s59";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "s49_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_s49";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "sP1_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_sP1";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "sP2_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_sP2";
+            SceneManager.LoadScene(0);
+        }
         else if(collision.tag == "initialSpawnpoint")
         {
             PlayerTeleport.targetSpawnID = "initialSpawn";

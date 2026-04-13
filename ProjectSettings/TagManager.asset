@@ -14,6 +14,10 @@ TagManager:
   - sP2_in
   - initialSpawnpoint
   - s69_out
+  - s59_out
+  - s49_out
+  - sP1_out
+  - sP2_out
   layers:
   - Default
   - TransparentFX
