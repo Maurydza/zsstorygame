@@ -223,6 +223,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &63007287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2588380726026426207, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}
+  m_PrefabInstance: {fileID: 775515450}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &63007289 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3176749374000843758, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}
+  m_PrefabInstance: {fileID: 775515450}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &63007293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63007287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705e8ecb2423f794e905ece52ec7b469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemName: magic wand
+  initialPosition: {x: 0, y: 0}
+  itemRigidbody: {fileID: 63007289}
+  CurrentSceneBuildIndex: 1
+  playerRigidbody: {fileID: 981213241}
+  playerGameObject: {fileID: 981213235}
 --- !u!1 &133862727
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,10 +570,14 @@ PrefabInstance:
       propertyPath: CurrentSceneBuildIndex
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4783423932714554378, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2588380726026426207, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 63007293}
   m_SourcePrefab: {fileID: 100100000, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}
 --- !u!1001 &889334534
 PrefabInstance:

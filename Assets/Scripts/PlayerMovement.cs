@@ -153,4 +153,9 @@ public class PlayerMovement : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    public void AddStamina(float amount)
+    {
+        stamina += amount;
+    }
 }

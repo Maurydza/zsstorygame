@@ -2,7 +2,7 @@
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
-class Item : MonoBehaviour
+public class Item : MonoBehaviour
 {
     [SerializeField] private string itemName;
     [SerializeField] private Vector2 initialPosition;
@@ -12,7 +12,7 @@ class Item : MonoBehaviour
     [SerializeField] private GameObject playerGameObject;
     private bool isEquipped = false;
 
-    private void Start()
+    public virtual void Start()
     {
         SceneManager.activeSceneChanged += RefreshItems;
         DontDestroyOnLoad(this);
