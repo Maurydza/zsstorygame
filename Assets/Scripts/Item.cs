@@ -1,22 +1,23 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 class Item : MonoBehaviour
 {
     [SerializeField] private string itemName;
+    [SerializeField] private Vector2 initialPosition;
     public Rigidbody2D itemRigidbody;
     public int CurrentSceneBuildIndex;
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private GameObject playerGameObject;
-    public GameObject originalPrefab;
     private bool isEquipped = false;
-    public int index;
 
-    private void Update()
+    private void Start()
     {
-        Debug.Log(index);
+        SceneManager.activeSceneChanged += RefreshItems;
+        DontDestroyOnLoad(this);
+        this.gameObject.transform.position = initialPosition;
     }
-
 
     private void Awake()
     {
@@ -38,9 +39,27 @@ class Item : MonoBehaviour
     public void Drop()
     {
         this.transform.SetParent(null);
-        SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetActiveScene());
         isEquipped = false;
         itemRigidbody.position = playerRigidbody.position + new Vector2(0, -130);
+    }
+
+    public void RefreshItems(Scene unloadedScene, Scene loadedScene)
+    {
+        if (isEquipped)
+        {
+            CurrentSceneBuildIndex = loadedScene.buildIndex;
+        }
+        else
+        {
+            if (CurrentSceneBuildIndex == loadedScene.buildIndex)
+            {
+                this.gameObject.SetActive(true);
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
     }
 
     public bool IsEquipped()

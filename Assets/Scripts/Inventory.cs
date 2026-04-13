@@ -69,7 +69,6 @@ public class Inventory : MonoBehaviour
             {
                 if (rightHandItem != null)
                 {
-                    playerObject.GetComponent<LyingItemsSpawner>().AddItem(rightHandItem.originalPrefab, rightHandItem.transform.position);
                     rightHandItem.Drop();
                     rightHandItem = null;
                     rightHandObject = null;
@@ -83,7 +82,6 @@ public class Inventory : MonoBehaviour
             {
                 if (leftHandItem != null)
                 {
-                    playerObject.GetComponent<LyingItemsSpawner>().AddItem(leftHandItem.originalPrefab, leftHandItem.transform.position);
                     leftHandItem.Drop();
                     leftHandItem = null;
                     leftHandObject = null;
@@ -109,7 +107,6 @@ public class Inventory : MonoBehaviour
                         rightHandItem = collision.GetComponent<Item>();
                         rightHandItem.PutInHand();
                         rightHandObject = rightHandItem.gameObject;
-                        playerObject.GetComponent<LyingItemsSpawner>().RemoveItem(rightHandItem.index);
                     }
                     else
                     {
@@ -130,7 +127,6 @@ public class Inventory : MonoBehaviour
                         leftHandItem = collision.GetComponent<Item>();
                         leftHandItem.PutInHand();
                         leftHandObject = leftHandItem.gameObject;
-                        playerObject.GetComponent<LyingItemsSpawner>().RemoveItem(leftHandItem.index);
                     }
                     else
                     {
@@ -147,7 +143,7 @@ public class Inventory : MonoBehaviour
 
     public static bool IsLHINull()
     {
-        if (leftHandItem  == null)
+        if (leftHandItem == null)
         {
             return true;
         }
