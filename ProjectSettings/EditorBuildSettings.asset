@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/initialSpawnpoint.unity
+    guid: 373546911a3e8954786357f8722e73a2
+  - enabled: 1
     path: Assets/Scenes/lobby.unity
     guid: c1828e394e32f1949a1221e8d37a7dc6
   - enabled: 1
@@ -26,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sP2.unity
     guid: 98ac899cccb5c874ea18e36eda97a863
-  - enabled: 1
-    path: Assets/Scenes/initialSpawnpoint.unity
-    guid: 373546911a3e8954786357f8722e73a2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

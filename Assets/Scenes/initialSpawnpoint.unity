@@ -537,6 +537,10 @@ PrefabInstance:
       propertyPath: initialPosition.y
       value: -230
       objectReference: {fileID: 0}
+    - target: {fileID: 4783423932714554378, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}
+      propertyPath: CurrentSceneBuildIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -934,9 +938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8129d87f347dd489b2b325b4d82145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  itemsToSpawn:
-  - {prefab: {fileID: 2588380726026426207, guid: 774fe6b9fdfbe95418dda05c17888048, type: 3}, position: {x: -50, y: -20, z: 0}, sceneIndex: 1, index: 0}
-  - {prefab: {fileID: 2588380726026426207, guid: 700a2ad81d10c244c8e4259722e1f468, type: 3}, position: {x: 50, y: 20, z: 0}, sceneIndex: 0, index: 0}
 --- !u!1 &1229107836
 GameObject:
   m_ObjectHideFlags: 0
