@@ -15,11 +15,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float staminaUsageMultiplier;
     [SerializeField] TextMeshProUGUI staminaLevelText;
     [SerializeField] TextMeshProUGUI moneyLevelText;
+    [SerializeField] TextMeshProUGUI hpLevelText;
     private float stamina;
     private InputAction moveAction;
     private InputAction sprintAction;
     public static bool isSprinting;
     public static int Money { get; set; }
+    private float hp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -36,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         Money = 0;
+        hp = 20;
+        hpLevelText.text = "HP: " + hp;
+
     }
 
     // Update is called once per frame
@@ -162,5 +167,30 @@ public class PlayerMovement : MonoBehaviour
     public int GetMoney()
     {
         return Money;
+    }
+
+    public void AddHp(float amount)
+    {
+
+        hp += amount;
+        
+        if(hp > 100)
+        {
+            hp = 100;
+            
+        }
+        hpLevelText.text = "HP: " + hp;
+
+
+    }
+    public void RemoveMoney(int amount)
+    {
+        Money -= amount;
+
+    }
+
+    public void RefreshMoney()
+    {
+        moneyLevelText.text = "Monety: " + Money;
     }
 }

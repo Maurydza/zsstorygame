@@ -83,8 +83,20 @@ public class NpcShopping : MonoBehaviour
         index = 0;
         dialoguePanel.SetActive(false);
     }
+    
+    public void Buy()
+    {
+        if(playerMovement.GetMoney() >= 10)
+        {
+            playerMovement.RemoveMoney(10);
+            playerMovement.AddHp(10);
+            playerMovement.RefreshMoney();
+        }
 
-
+        
+    }
+    
+    
     // this function will type the dialogue letter by letter with a delay between each letter
     IEnumerator Typing()
     {

@@ -1876,7 +1876,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5637235973155104090, guid: 61536a8dcbb33694b81534f44ef30b72, type: 3}
   m_Color: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
@@ -2978,7 +2978,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1948464383}
   dialogueText: {fileID: 1693240590}
   dialogueLines:
-  - halo halo
+  - Kup zaopatrzenie lecznicze za 10 monet (+10 zdrowia)
   BuyButton: {fileID: 1982147493}
   ExitButton: {fileID: 1379475777}
   wordSpeed: 0.04
@@ -3389,7 +3389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1379475779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1251174654}
+        m_TargetAssemblyTypeName: NpcShopping, Assembly-CSharp
+        m_MethodName: zeroExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1379475779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4704,7 +4716,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1982147496}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1251174654}
+        m_TargetAssemblyTypeName: NpcShopping, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1982147496
 MonoBehaviour:
   m_ObjectHideFlags: 0
