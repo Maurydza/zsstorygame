@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private GameObject playerGameObject;
+    [SerializeField] private GameObject UIGameObject;
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private float speed;
     [SerializeField] private float sprintSpeed;
@@ -17,10 +19,18 @@ public class PlayerMovement : MonoBehaviour
     private InputAction sprintAction;
     public static bool isSprinting;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void Awake()
+    {
+        DontDestroyOnLoad(playerGameObject);
+        DontDestroyOnLoad(UIGameObject);
+    }
+
     void Start()
     {
         playerRigidbody.freezeRotation = true;
         isSprinting = false;
+        stamina = 70;
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
     }
@@ -67,10 +77,67 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.tag == "director_in")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene
+            PlayerTeleport.targetSpawnID = "dyr_drzwi";
+            SceneManager.LoadScene(1); // Load pryncypała scene
         }
         else if(collision.tag == "director_out"){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_dyr";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "s69_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_s69";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "s59_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_s59";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "s49_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_s49";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "sP1_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_sP1";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "sP2_out")
+        {
+            PlayerTeleport.targetSpawnID = "lobby_drzwi_sP2";
+            SceneManager.LoadScene(0);
+        }
+        else if(collision.tag == "initialSpawnpoint")
+        {
+            PlayerTeleport.targetSpawnID = "initialSpawn";
+            SceneManager.LoadScene(0);
+        }
+        else if (collision.tag == "s49_in")
+        {
+            PlayerTeleport.targetSpawnID = "s49_drzwi";
+            SceneManager.LoadScene(2);
+        }
+        else if (collision.tag == "s59_in")
+        {
+            PlayerTeleport.targetSpawnID = "s59_drzwi";
+            SceneManager.LoadScene(3);
+        }
+        else if (collision.tag == "s69_in")
+        {
+            PlayerTeleport.targetSpawnID = "s69_drzwi";
+            SceneManager.LoadScene(4);
+        }
+        else if (collision.tag == "sP1_in")
+        {
+            PlayerTeleport.targetSpawnID = "sP1_drzwi";
+            SceneManager.LoadScene(5);
+        }
+        else if (collision.tag == "sP2_in")
+        {
+            PlayerTeleport.targetSpawnID = "sP2_drzwi";
+            SceneManager.LoadScene(6);
         }
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ed262a4d50e0de84b8c6dbf996a7cdd5
+guid: 069db76aca47f55489c87222f27ec111
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8341820551073039708
-    second: Copilot_20260307_230413_0
+      213: 2429565612642077008
+    second: hall_f1 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Copilot_20260307_230413_0
+      name: hall_f1 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 588
-        height: 1536
+        width: 1496
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4aafc39d766eb3c80800000000000000
-      internalID: -8341820551073039708
+      spriteID: 05909046d0d87b120800000000000000
+      internalID: 2429565612642077008
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Copilot_20260307_230413_0: -8341820551073039708
+      hall_f1 1_0: 2429565612642077008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
