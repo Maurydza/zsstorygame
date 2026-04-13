@@ -51,12 +51,12 @@ public class NpcNeutral : MonoBehaviour
             }
         }
 
-        // if the dialogue is fully typed, the continue button will appear
+        //if the dialogue is fully typed, the continue button will appear
 
-        //if (dialogueText.text == dialogueLines[index])
-        //{
-        //    continueButton.SetActive(true); 
-        //}
+        if (dialogueText.text == dialogueLines[index])
+        {
+            continueButton.SetActive(true);
+        }
     }
 
     // this function will reset the dialogue and hide the dialogue panel

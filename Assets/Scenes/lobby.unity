@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 868517888}
         m_TargetAssemblyTypeName: NpcNeutral, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
