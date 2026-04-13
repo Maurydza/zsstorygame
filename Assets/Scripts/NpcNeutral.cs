@@ -95,6 +95,7 @@ public class NpcNeutral : MonoBehaviour
             {
                 StopCoroutine(typingCoroutine);
             }
+            
 
             StartCoroutine(Typing());
         }
