@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,13 +16,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float staminaUsageMultiplier;
     [SerializeField] TextMeshProUGUI staminaLevelText;
     [SerializeField] TextMeshProUGUI moneyLevelText;
-    [SerializeField] TextMeshProUGUI hpLevelText;
+    //[SerializeField] TextMeshProUGUI hpLevelText;
     private float stamina;
     private InputAction moveAction;
     private InputAction sprintAction;
     public static bool isSprinting;
     public static int Money { get; set; }
-    private float hp;
+    public float maxHealth = 100f;
+    public float currentHealth;
+
+    public Slider healthSlider;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -38,8 +43,9 @@ public class PlayerMovement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         Money = 0;
-        hp = 20;
-        hpLevelText.text = "HP: " + hp;
+        currentHealth = 100f;
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
 
     }
 
@@ -82,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
         staminaLevelText.text = "Stamina: " + ((int)stamina).ToString();
         moneyLevelText.text = "Monety: " + Money.ToString();
     }
+
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "director_in")
@@ -152,7 +160,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "money")
         {
             Money += 5;
-            Debug.Log("dodalo sie");
             collision.GetComponent<Transform>().gameObject.SetActive(false);
             collision.GetComponent<PersistentExactSceneOnlyObject>().MarkCollected();
             Destroy(collision.gameObject);
@@ -172,20 +179,25 @@ public class PlayerMovement : MonoBehaviour
     public void AddHp(float amount)
     {
 
-        hp += amount;
+        currentHealth += amount;
         
-        if(hp > 100)
+        if(currentHealth >= 100f)
         {
-            hp = 100;
+            currentHealth = maxHealth;
             
         }
-        hpLevelText.text = "HP: " + hp;
+        healthSlider.value = currentHealth;
+
 
 
     }
     public void RemoveMoney(int amount)
     {
-        Money -= amount;
+        
+        if(currentHealth < 100f)
+        {
+            Money -= amount;
+        }
 
     }
 
