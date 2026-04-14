@@ -40,7 +40,7 @@ public class Item : MonoBehaviour
         }
     }
 
-    // 🔥 DODAJEMY TO
+    // DODAJEMY TO
     public void Drop()
     {
         transform.SetParent(null);

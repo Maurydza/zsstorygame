@@ -634,52 +634,6 @@ CapsuleCollider2D:
   m_Offset: {x: -57.516636, y: 17.89334}
   m_Size: {x: 150.73009, y: 434.00342}
   m_Direction: 0
---- !u!1 &682970675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 682970677}
-  - component: {fileID: 682970676}
-  m_Layer: 0
-  m_Name: RoomManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &682970676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682970675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0ac8140e6005948a8300e3cc9aafa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomManager
-  weapon: {fileID: 0}
-  playerWithGun: {fileID: 6551696340965002949, guid: 0bf37338db439c346bd29b8c435a1f88, type: 3}
---- !u!4 &682970677
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682970675}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.5841, y: -3550, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930011966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,4 +1720,3 @@ SceneRoots:
   - {fileID: 119237419}
   - {fileID: 2113582374}
   - {fileID: 1922598629}
-  - {fileID: 682970677}

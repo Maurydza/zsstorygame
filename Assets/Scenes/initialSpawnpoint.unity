@@ -246,12 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705e8ecb2423f794e905ece52ec7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  itemName: magic wand
-  initialPosition: {x: 0, y: 0}
   itemRigidbody: {fileID: 63007289}
-  CurrentSceneBuildIndex: 1
-  playerRigidbody: {fileID: 981213241}
-  playerGameObject: {fileID: 981213235}
 --- !u!1 &133862727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,18 +1049,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e519edd2dd2b8934ba1b9512d54d7b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  itemName: 
-  initialPosition: {x: 0, y: 0}
-  itemRigidbody: {fileID: 63007289}
-  CurrentSceneBuildIndex: 0
-  playerRigidbody: {fileID: 981213241}
-  playerGameObject: {fileID: 981213235}
+  itemRigidbody: {fileID: 0}
   bulletPrefab: {fileID: 6313963196751720094, guid: 90d1dc307ae277e4ca7afca2eb2fce01, type: 3}
   firePoint: {fileID: 1130469858}
   fireRate: 2
   damage: 10
   bulletSpeed: 2000
-  canShoot: 0
 --- !u!1 &1112893002
 GameObject:
   m_ObjectHideFlags: 0
