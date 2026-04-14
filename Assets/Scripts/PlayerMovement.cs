@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction sprintAction;
     public static bool isSprinting;
     public static int Money { get; set; }
-    private float hp;
+    public float hp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         sprintAction = InputSystem.actions.FindAction("Sprint");
         Money = 0;
-        hp = 20;
+        hp = 100;
         hpLevelText.text = "HP: " + hp;
 
     }
