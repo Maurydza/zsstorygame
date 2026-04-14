@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Weapon : Item
 {
@@ -12,15 +13,16 @@ public class Weapon : Item
 
     float nextTimeToFire = 0f;
 
-    public override void Start()
-    {
-        base.Start();
-        PutInHand();
-    }
-
     void Update()
     {
-        if (!IsEquipped()) return;
+        string sceneName = SceneManager.GetActiveScene().name.ToLower();
+
+        if (!(sceneName.StartsWith("s49") ||
+              sceneName.StartsWith("s59") ||
+              sceneName.StartsWith("s69") ||
+              sceneName.StartsWith("sp1") ||
+              sceneName.StartsWith("sp2")))
+            return;
 
         if (Mouse.current.leftButton.isPressed && Time.time >= nextTimeToFire)
         {
@@ -37,35 +39,34 @@ public class Weapon : Item
             return;
         }
 
-        Debug.Log("STRZAL");
-
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 
-        // ignoruj kolizję z graczem
-        Collider2D playerCol = GetComponent<Collider2D>();
-        Collider2D bulletCol = bullet.GetComponent<Collider2D>();
-        if (playerCol != null && bulletCol != null)
+        GameObject player = GameObject.FindWithTag("Player");
+
+        if (player != null)
         {
-            Physics2D.IgnoreCollision(bulletCol, playerCol);
+            Collider2D playerCol = player.GetComponent<Collider2D>();
+            Collider2D bulletCol = bullet.GetComponent<Collider2D>();
+
+            if (playerCol != null && bulletCol != null)
+            {
+                Physics2D.IgnoreCollision(bulletCol, playerCol);
+            }
         }
 
-        // kierunek do myszki
         Vector3 mousePos = Mouse.current.position.ReadValue();
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
         worldPos.z = 0f;
 
         Vector2 direction = (worldPos - firePoint.position).normalized;
 
-        // obrót pocisku
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        // damage
         Bullet b = bullet.GetComponent<Bullet>();
         if (b != null)
             b.damage = damage;
 
-        // ruch
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.linearVelocity = direction * bulletSpeed;

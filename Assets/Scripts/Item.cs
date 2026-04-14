@@ -1,64 +1,54 @@
 ﻿using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.SceneManagement;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private string itemName;
-    [SerializeField] private Vector2 initialPosition;
-    public Rigidbody2D itemRigidbody;
-    public int CurrentSceneBuildIndex;
-    [SerializeField] private Rigidbody2D playerRigidbody;
-    [SerializeField] private GameObject playerGameObject;
-    private bool isEquipped = false;
+    protected GameObject playerGameObject;
+    protected Rigidbody2D playerRigidbody;
 
-    public virtual void Start()
-    {
-        SceneManager.activeSceneChanged += RefreshItems;
-        DontDestroyOnLoad(this);
-        this.gameObject.transform.position = initialPosition;
-    }
+    public Rigidbody2D itemRigidbody;
+
+    private bool isEquipped = false;
 
     private void Awake()
     {
         playerGameObject = GameObject.FindWithTag("Player");
-        playerRigidbody = playerGameObject.GetComponent<Rigidbody2D>();
+
+        if (playerGameObject != null)
+        {
+            playerRigidbody = playerGameObject.GetComponent<Rigidbody2D>();
+        }
+
+        itemRigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    public virtual void Start()
+    {
+        // nic
     }
 
     public virtual void Use()
     {
-        Debug.Log($"{itemName} has been used");
+        Debug.Log("Item used");
     }
 
     public void PutInHand()
     {
-        isEquipped = true;
-        this.transform.SetParent(playerGameObject.transform);
+        if (playerGameObject != null)
+        {
+            isEquipped = true;
+            transform.SetParent(playerGameObject.transform);
+        }
     }
 
+    // 🔥 DODAJEMY TO
     public void Drop()
     {
-        this.transform.SetParent(null);
+        transform.SetParent(null);
         isEquipped = false;
-        itemRigidbody.position = playerRigidbody.position + new Vector2(0, -130);
-    }
 
-    public void RefreshItems(Scene unloadedScene, Scene loadedScene)
-    {
-        if (isEquipped)
+        if (itemRigidbody != null && playerRigidbody != null)
         {
-            CurrentSceneBuildIndex = loadedScene.buildIndex;
-        }
-        else
-        {
-            if (CurrentSceneBuildIndex == loadedScene.buildIndex)
-            {
-                this.gameObject.SetActive(true);
-            }
-            else
-            {
-                this.gameObject.SetActive(false);
-            }
+            itemRigidbody.position = playerRigidbody.position + new Vector2(0, -1);
         }
     }
 
