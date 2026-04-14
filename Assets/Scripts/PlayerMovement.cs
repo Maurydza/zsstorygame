@@ -160,7 +160,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "money")
         {
             Money += 5;
-            Debug.Log("dodalo sie");
             collision.GetComponent<Transform>().gameObject.SetActive(false);
             collision.GetComponent<PersistentExactSceneOnlyObject>().MarkCollected();
             Destroy(collision.gameObject);
