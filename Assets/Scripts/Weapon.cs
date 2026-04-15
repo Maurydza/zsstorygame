@@ -33,6 +33,7 @@ public class Weapon : Item
 
     void Shoot()
     {
+        Debug.Log("shooting...");
         if (bulletPrefab == null || firePoint == null)
         {
             Debug.LogError("Brak bulletPrefab lub firePoint!");
@@ -40,6 +41,9 @@ public class Weapon : Item
         }
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        bullet.transform.localScale = new Vector3(7f, 7f, 1f); 
+        bullet.transform.parent = null;
 
         GameObject player = GameObject.FindWithTag("Player");
 

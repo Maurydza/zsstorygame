@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: fb5b20562a275ff4fa31da4cf8c39bc8
+guid: fec8ba4f01962ee4a907f873231e2c60
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5875038362160349911
-    second: lobby_0
-  - first:
-      213: 6885226704389184245
-    second: lobby_1
-  - first:
-      213: 3484645518982328544
-    second: lobby_2
+      213: 7731367015734202164
+    second: lobby 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -106,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lobby_0
+      name: lobby 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,59 +108,15 @@ TextureImporter:
         width: 863
         height: 985
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d24c5a5344588150800000000000000
-      internalID: 5875038362160349911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobby_1
-      rect:
-        serializedVersion: 2
-        x: 371
-        y: 6
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5fa9629453d3d8f50800000000000000
-      internalID: 6885226704389184245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobby_2
-      rect:
-        serializedVersion: 2
-        x: 758
-        y: 3
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e0391713a2fb5030800000000000000
-      internalID: 3484645518982328544
+      spriteID: 43f420996555b4b60800000000000000
+      internalID: 7731367015734202164
       vertices: []
       indices: 
       edges: []
@@ -175,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 44fcec288d255734fab07b1dd337f311
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lobby_0: 5875038362160349911
-      lobby_1: 6885226704389184245
-      lobby_2: 3484645518982328544
+      lobby 1_0: 7731367015734202164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
