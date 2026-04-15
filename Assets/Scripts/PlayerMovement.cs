@@ -81,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
 
         staminaLevelText.text = "Stamina: " + ((int)stamina).ToString();
         moneyLevelText.text = "Monety: " + Money.ToString();
+        
+        // połączenie ze starym ui do hp
+        hpLevelText.text = "HP: " + hp;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -183,6 +186,19 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+    public void TakeDamage(float amount)
+    {
+        hp -= amount;
+        Debug.Log("HP: " + hp);
+
+        if (hp <= 0)
+        {
+            Debug.Log("Dead");
+            // tu potem zrobimy śmierć
+        }
+    }
+
     public void RemoveMoney(int amount)
     {
         Money -= amount;
@@ -193,4 +209,5 @@ public class PlayerMovement : MonoBehaviour
     {
         moneyLevelText.text = "Monety: " + Money;
     }
+
 }
