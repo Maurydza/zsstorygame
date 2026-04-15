@@ -1,0 +1,50 @@
+Item
+======
+
+This class describes items. It is usually a parent class for a concrete item type.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] private string itemName
+     - The name of an item.
+   * - [SerializeField] private Vector2 initialPosition
+     - The position item will teleport after starting the game.
+   * - public Rigidbody2D itemRigidbody
+     - References rigidbody component of this object.
+   * - public int CurrentSceneBuildIndex
+     - Inicates the scene at where the item is supposed to be active.
+   * - [SerializeField] private Rigidbody2D playerRigidbody
+     - References player's rigidbody.
+   * - [SerializeField] private GameObject playerGameObject
+     - References player's game object
+   * - private bool isEquipped = false
+     - Indicates whether the item is currently equipped by the player.
+
+Methods
+--------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Method
+     - Description
+   * - public virtual void Start()
+     - Initializes the item and makes it not destroy on scene loads.
+   * - private void Awake()
+     - Refreshes values variables playerGameObject and playerRigidbody are referencing.
+   * - public virtual void Use()
+     - Calls all the functions that do what the item is supposed to do. Usually overriden.
+   * - public void PutInHand()
+     - Equips the item and changes its parent to player.
+   * - public void Drop()
+     - Drops the item and removes it from player's children.
+   * - public void RefreshItems(Scene unloadedScene, Scene loadedScene)
+     - Shows items that match the current scene build index and hides other.
+   * - public bool IsEquipped()
+     - Returns isEquipped variable state.

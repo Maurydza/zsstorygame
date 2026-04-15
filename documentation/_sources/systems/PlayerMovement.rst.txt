@@ -1,0 +1,74 @@
+PlayerMovement
+===============
+
+This class is responsible for handling player movement, stamina system, health, money management, and scene transitions.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] GameObject playerGameObject
+     - Reference to the player game object that persists between scenes.
+   * - [SerializeField] GameObject UIGameObject
+     - Reference to the UI game object that persists between scenes.
+   * - [SerializeField] Rigidbody2D playerRigidbody
+     - Rigidbody2D component used for controlling player movement.
+   * - [SerializeField] float speed
+     - Default player movement speed.
+   * - [SerializeField] float sprintSpeed
+     - Increased movement speed when sprinting.
+   * - [SerializeField] float maxStamina
+     - Maximum stamina value.
+   * - [SerializeField] float staminaRegenMultiplier
+     - Rate at which stamina regenerates over time.
+   * - [SerializeField] float staminaUsageMultiplier
+     - Rate at which stamina decreases while sprinting.
+   * - [SerializeField] TextMeshProUGUI staminaLevelText
+     - UI text displaying current stamina.
+   * - [SerializeField] TextMeshProUGUI moneyLevelText
+     - UI text displaying current amount of money.
+   * - [SerializeField] TextMeshProUGUI hpLevelText
+     - UI text displaying current health points.
+   * - private float stamina
+     - Current stamina value.
+   * - private InputAction moveAction
+     - Input action responsible for player movement.
+   * - private InputAction sprintAction
+     - Input action responsible for sprinting.
+   * - public static bool isSprinting
+     - Indicates whether the player is currently sprinting.
+   * - public static int Money
+     - Stores the current amount of player money.
+   * - private float hp
+     - Current health points of the player.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void Awake()
+      - Prevents player and UI objects from being destroyed on scene load.
+    * - void Start()
+      - Initializes player variables, input actions, stamina, health, and UI values.
+    * - void FixedUpdate()
+      - Handles player movement, sprinting logic, stamina consumption/regeneration, and updates UI values.
+    * - private void OnTriggerEnter2D(Collider2D collision)
+      - Handles interactions with trigger objects such as scene transitions and collecting money.
+    * - public void AddStamina(float amount)
+      - Increases stamina by a given amount.
+    * - public int GetMoney()
+      - Returns current amount of money.
+    * - public void AddHp(float amount)
+      - Increases player health and clamps it to maximum value, then updates UI.
+    * - public void RemoveMoney(int amount)
+      - Decreases player money by a given amount.
+    * - public void RefreshMoney()
+      - Updates money UI text to reflect current value.

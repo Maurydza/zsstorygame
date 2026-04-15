@@ -1,0 +1,40 @@
+PlayerFollow
+=============
+
+This class is responsible for controlling camera movement relative to the player. It ensures that the camera follows the player only when they move beyond defined horizontal and vertical bounds.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] GameObject cameraGameObject
+     - Reference to the camera game object that will persist between scenes.
+   * - [SerializeField] Rigidbody2D playerRigidbody
+     - Rigidbody2D component of the player used to track position.
+   * - [SerializeField] Transform cameraTransform
+     - Transform component of the camera used to update its position.
+   * - [SerializeField] float maxHorizontal
+     - Maximum horizontal distance the player can move from the camera before it starts following.
+   * - [SerializeField] float maxVertical
+     - Maximum vertical distance the player can move from the camera before it starts following.
+   * - [SerializeField] bool isUnlocked
+     - Determines whether the camera is allowed to follow the player.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void Awake()
+      - Initializes the camera object, prevents it from being destroyed on scene load, and disables camera following by default.
+    * - void Update()
+      - Script loop. Updates camera position based on player position if following is unlocked and player exceeds defined bounds.
+    * - public void Unlock()
+      - Enables camera following by setting isUnlocked to true.

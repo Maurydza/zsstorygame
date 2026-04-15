@@ -1,0 +1,32 @@
+MainMenu
+=========
+
+This class is responsible for handling main menu interactions such as starting the game, showing instructions, and exiting the application.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] GameObject uiGameObject
+     - Reference to the UI game object that is enabled when the game starts.
+   * - [SerializeField] PlayerFollow cameraFollow
+     - Reference to the :doc:`PlayerFollow` component used to enable camera movement.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - public void StartGame()
+      - Unlocks camera following, enables UI, and loads the main game scene.
+    * - public void ShowInstructions()
+      - Placeholder method intended for displaying game instructions.
+    * - public void ExitGame()
+      - Exits the application.

@@ -1,0 +1,38 @@
+QuitMenu
+=========
+
+This class is responsible for handling the in-game quit menu, allowing the player to toggle exit options using a key input.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - private InputAction escapeAction
+     - Input action assigned to the Escape key for toggling the quit menu.
+   * - [SerializeField] GameObject cancelButton
+     - Reference to the cancel button UI element.
+   * - [SerializeField] GameObject exitButton
+     - Reference to the exit button UI element.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void Start()
+      - Initializes the script, prevents it from being destroyed on scene load, and assigns the Escape input action.
+    * - void Update()
+      - Detects Escape key press and toggles the quit menu if not in the main menu scene.
+    * - private void ToggleMenu()
+      - Toggles visibility of the exit and cancel buttons.
+    * - public void ExitGame()
+      - Exits the application.
+    * - public void Cancel()
+      - Closes the quit menu by toggling UI elements.

@@ -1,0 +1,15 @@
+KindaUselessThingy
+===================
+
+This class is for debbuging scripts starting.
+
+Methods
+--------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Methods
+     - Description
+   * - void Start()
+     - Writes a message in the console indicating that the script is starting.

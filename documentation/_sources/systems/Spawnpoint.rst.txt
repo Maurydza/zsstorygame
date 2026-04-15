@@ -1,0 +1,15 @@
+Spawnpoint
+===========
+
+This class represents a spawn point in the scene. It is used as a reference location for player teleportation based on a matching identifier.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - public string spawnID
+     - Identifier used to match this spawn point with the targetSpawnID from :doc:`PlayerTeleport`.

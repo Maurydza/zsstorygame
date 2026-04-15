@@ -1,0 +1,34 @@
+PersistentExactSceneOnlyObject
+===============================
+
+This class describes the behaviour of game wide objects.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] private Vector2 initialPosition
+     - The position object will teleport to after starting the game.
+   * - public int CurrentSceneBuildIndex
+     - Build index of the scene object will appear in.
+   * - private bool wasCollected
+     - Indicates whether the object (usually money) has been already collected or not, thus setting its activation state.
+
+Methods
+---------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Method
+     - Description
+   * - void Start()
+     - Initializes the object, makes it not destroy on scene load and sets its initial position.
+   * - public void RefreshObjects(Scene unloadedScene, Scene loadedScene)
+     - Shows objects that match the current scene build index and hides other.
+   * - public void MarkCollected()
+     - Sets wasCollected to true.

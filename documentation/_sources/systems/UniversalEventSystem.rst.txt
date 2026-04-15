@@ -1,0 +1,15 @@
+UniversalEventSystem
+====================
+
+This class ensures that the EventSystem object persists across scene loads.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void Start()
+      - Prevents the EventSystem object from being destroyed when loading new scenes.

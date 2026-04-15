@@ -1,0 +1,34 @@
+PlayerRotation
+===============
+
+This class is responsible for applying a wobble rotation effect to the player while moving. The rotation oscillates between left and right directions and increases in speed while sprinting.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] Rigidbody2D playerRigidbody
+     - Rigidbody2D component used to apply rotation to the player.
+   * - [SerializeField] float wobbleSpeed
+     - Rotation speed applied while the player is moving normally.
+   * - [SerializeField] float wobbleSprintSpeed
+     - Increased rotation speed applied while the player is sprinting.
+   * - private RotationDirection rotationDirection
+     - Determines the current direction of rotation (Left or Right).
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void Start()
+      - Called on initialization (currently not used).
+    * - void FixedUpdate()
+      - Applies oscillating rotation to the player when moving, switches direction at defined angle limits, and resets rotation when idle.

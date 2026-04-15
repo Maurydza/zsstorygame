@@ -1,0 +1,28 @@
+SpeedWand
+==========
+
+This class represents a usable item that restores player stamina when used. It inherits from :doc:`Item`.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - private PlayerMovement playerMovement
+     - Reference to the :doc:`PlayerMovement` component used to modify player stamina.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - public override void Start()
+      - Initializes the item and retrieves reference to the PlayerMovement component.
+    * - public override void Use()
+      - Uses the item and restores player stamina by a fixed amount.

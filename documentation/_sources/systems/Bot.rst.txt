@@ -1,0 +1,4 @@
+Bot
+============
+
+This class doesn't have any purpose, methods or fields.

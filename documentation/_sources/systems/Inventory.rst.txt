@@ -1,0 +1,69 @@
+Inventory
+==========
+
+This class describes the items that are carried by the player in :doc:`ItemCarrier`.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] TextMeshProGUI selectedHandText
+     - Text indicating which hand is currently selected
+   * - [SerializeField] GameObject playerObject
+     - Player game object used for referencing player
+   * - private bool rightHandSelected
+     - Indicates whether the right hand is currently in use if true, else means the left hand is being used.
+   * - private InputAction lkeyAction
+     - Input action for left mouse button.
+   * - private InputAction rkeyAction
+     - Input action for right mouse button.
+   * - private InputAction equipAction
+     - Input action for E button. Used for equipping items.
+   * - private InputAction dropAction
+     - Input action for G button. Used for dropping items.
+   * - private InputAction changeHandAction
+     - Input action for TAB button. Used for manipulating rightHandSelected boolean.
+
+Static fields
+--------------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Field
+      - Description
+    * - private static Item leftHandItem;
+      - Used for referencing :doc:`Item` held in the left hand.
+    * - private static Item rightHandItem;
+      - Used for referencing :doc:`Item` held in the right hand.
+    * - public static GameObject leftHandObject
+      - Used for referencing game object of an item held in the left hand
+    * - public static GameObject rightHandObject
+      - Used for referencing game object of an item held in the right hand
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void Start()
+      - Initializes the script on game launch.
+    * - void Update()
+      - Script loop. Used mainly for detecting key presses.
+    * - private void OnTriggerStay2D(Collider2D collision)
+      - Detects interactions with items and equips them if needed.
+    * - public static bool IsLHINull()
+      - Returns true if leftHandItem variable is null, else false.
+    * - public static bool IsRHINull()
+      - Returns true if rightHandItem variable is null, else false.
+    * - public static void LHITransform(Vector2 position)
+      - Sets the offset of the item held in the left hand.
+    * - public static void RHITransform(Vector2 position)
+      - Sets the offset of the item held in the right hand.

@@ -1,0 +1,54 @@
+NpcNeutral
+===========
+
+This class describes the behavior of a neutral NPC that allows the player to interact and display dialogue with multiple lines when the player is nearby.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - public GameObject dialoguePanel
+     - UI panel that displays the NPC dialogue.
+   * - public Text dialogueText
+     - UI text component used to render dialogue content.
+   * - public string[] dialogueLines
+     - Array of dialogue lines displayed sequentially.
+   * - private int index
+     - Index of the currently displayed dialogue line.
+   * - private InputAction interraction
+     - Input action responsible for interacting with the NPC (e.g. "E" key).
+   * - private Coroutine typingCoroutine
+     - Reference to the currently running typing coroutine.
+   * - public GameObject continueButton
+     - Button used to continue to the next dialogue line.
+   * - public float wordSpeed
+     - Delay between each character when typing dialogue.
+   * - public bool playerIsClose
+     - Indicates whether the player is within interaction range.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void Start()
+      - Initializes input action for interaction and sets initial player proximity state.
+    * - void Update()
+      - Handles interaction input, toggles dialogue panel, starts typing coroutine, and enables continue button when dialogue finishes.
+    * - public void zeroExit()
+      - Resets dialogue state, clears text, resets index, and hides the dialogue panel.
+    * - IEnumerator Typing()
+      - Coroutine responsible for displaying dialogue text letter by letter with delay.
+    * - public void NextLine()
+      - Moves to the next line of dialogue or exits if the last line is reached.
+    * - private void OnTriggerEnter2D(Collider2D other)
+      - Detects when the player enters NPC interaction range and enables interaction.
+    * - private void OnTriggerExit2D(Collider2D other)
+      - Detects when the player leaves NPC interaction range, disables interaction, and resets dialogue.

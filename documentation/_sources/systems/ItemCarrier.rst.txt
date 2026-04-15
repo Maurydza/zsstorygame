@@ -1,0 +1,40 @@
+ItemCarrier
+============
+
+This class makes items follow the player.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - [SerializeField] private Rigidbody2D playerRigidbody
+     - References player's rigidbody.
+   * - [SerializeField] private float LHOffsetX
+     - Stores the x coordinate offset of the item held in left hand.
+   * - [SerializeField] private float LHOffsetY
+     - Stores the y coordinate offset of the item held in left hand.
+   * - [SerializeField] private float RHOffsetX
+     - Stores the x coordinate offset of the item held in right hand.
+   * - [SerializeField] private float RHOffsetY
+     - Stores the y coordinate offset of the item held in right hand.
+   * - private static Vector2 LHOffset
+     - Above left hand offset combined into a vector.
+   * - private static Vector2 RHOffset
+     - Above right hand offset combined into a vector.
+
+Methods
+--------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Method
+     - Description
+   * - void Start()
+     - Initializes offsets.
+   * - void FixedUpdate()
+     - Makes items change position to player with offset.

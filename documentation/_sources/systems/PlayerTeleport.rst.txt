@@ -1,0 +1,30 @@
+PlayerTeleport
+===============
+
+This class is responsible for teleporting the player to a specific spawn point after a scene is loaded. The destination is determined by a matching spawn ID.
+
+Fields
+-------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Field
+     - Description
+   * - public static string targetSpawnID
+     - Identifier used to determine which spawn point the player should be moved to after scene load.
+
+Methods
+--------
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - void OnEnable()
+      - Subscribes to the sceneLoaded event when the object becomes active.
+    * - void OnDisable()
+      - Unsubscribes from the sceneLoaded event when the object becomes inactive.
+    * - void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+      - Finds all spawn points in the scene and moves the player to the one matching targetSpawnID.
