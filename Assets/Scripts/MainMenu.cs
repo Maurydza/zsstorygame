@@ -5,6 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject uiGameObject;
     [SerializeField] private PlayerFollow cameraFollow;
+    [SerializeField] private GameObject instructions;
 
     public void StartGame()
     {
@@ -19,7 +20,12 @@ public class MainMenu : MonoBehaviour
 
     public void ShowInstructions()
     {
+        instructions.SetActive(true);
+    }
 
+    public void HideInstructions()
+    {
+        instructions.SetActive(false);
     }
 
     public void ExitGame()
