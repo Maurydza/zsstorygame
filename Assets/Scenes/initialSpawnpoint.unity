@@ -1577,7 +1577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 850565991417107757, guid: 33995d222661592468d74c293172b38d, type: 3}
       propertyPath: initialPosition.x
-      value: -1087
+      value: -700
       objectReference: {fileID: 0}
     - target: {fileID: 850565991417107757, guid: 33995d222661592468d74c293172b38d, type: 3}
       propertyPath: initialPosition.y
@@ -1589,11 +1589,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6882407215729527413, guid: 33995d222661592468d74c293172b38d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1440
+      value: -1913
       objectReference: {fileID: 0}
     - target: {fileID: 6882407215729527413, guid: 33995d222661592468d74c293172b38d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 138
+      value: 1616
       objectReference: {fileID: 0}
     - target: {fileID: 6882407215729527413, guid: 33995d222661592468d74c293172b38d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2898,7 +2898,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1482492439}
   m_HandleRect: {fileID: 0}
