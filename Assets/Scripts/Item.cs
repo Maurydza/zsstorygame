@@ -53,7 +53,7 @@ public class Item : MonoBehaviour
 
         if (itemRigidbody != null && playerRigidbody != null)
         {
-            itemRigidbody.position = playerRigidbody.position + new Vector2(0, -1);
+            itemRigidbody.position = playerRigidbody.position + new Vector2(0, -130);
         }
     }
 

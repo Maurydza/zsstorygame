@@ -190,6 +190,19 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        Debug.Log("HP: " + currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Dead");
+            // tu potem zrobimy śmierć
+        }
+    }
+
     public void RemoveMoney(int amount)
     {
         
