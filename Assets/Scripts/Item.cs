@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Item : MonoBehaviour
 {
-    protected GameObject playerGameObject;
-    protected Rigidbody2D playerRigidbody;
-
     public Rigidbody2D itemRigidbody;
-
     private bool isEquipped = false;
+    [SerializeField] private string itemName;
+    [SerializeField] private Vector2 initialPosition;
+    public int CurrentSceneBuildIndex;
+    [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private GameObject playerGameObject;
 
     private void Awake()
     {
@@ -19,15 +21,14 @@ public class Item : MonoBehaviour
         }
 
         itemRigidbody = GetComponent<Rigidbody2D>();
-        SceneManager.activeSceneChanged += RefreshItems;
-        DontDestroyOnLoad(this);
-        this.gameObject.transform.position = initialPosition;
-        this.gameObject.SetActive(false);
     }
 
     public virtual void Start()
     {
-        // nic
+        SceneManager.activeSceneChanged += RefreshItems;
+        DontDestroyOnLoad(this);
+        this.gameObject.transform.position = initialPosition;
+        this.gameObject.SetActive(false);
     }
 
     public virtual void Use()
@@ -53,6 +54,25 @@ public class Item : MonoBehaviour
         if (itemRigidbody != null && playerRigidbody != null)
         {
             itemRigidbody.position = playerRigidbody.position + new Vector2(0, -1);
+        }
+    }
+
+    public void RefreshItems(Scene unloadedScene, Scene loadedScene)
+    {
+        if (isEquipped)
+        {
+            CurrentSceneBuildIndex = loadedScene.buildIndex;
+        }
+        else
+        {
+            if (CurrentSceneBuildIndex == loadedScene.buildIndex)
+            {
+                this.gameObject.SetActive(true);
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+            }
         }
     }
 
