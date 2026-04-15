@@ -6,6 +6,17 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
     Transform target;
     Vector2 moveDirection;
+    public float hp = 50f;
+
+    public void TakeDamage(float amount)
+    {
+        hp -= amount;
+
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Awake()
     {

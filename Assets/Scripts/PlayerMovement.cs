@@ -195,8 +195,14 @@ public class PlayerMovement : MonoBehaviour
         if (hp <= 0)
         {
             Debug.Log("Dead");
-            // tu potem zrobimy śmierć
+            Die();
         }
+    }
+
+    void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        hp = 100;
     }
 
     public void RemoveMoney(int amount)

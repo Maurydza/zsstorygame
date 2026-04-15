@@ -19,6 +19,7 @@ TagManager:
   - sP1_out
   - sP2_out
   - money
+  - Enemy
   layers:
   - Default
   - TransparentFX
