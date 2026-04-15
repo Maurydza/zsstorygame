@@ -13,6 +13,7 @@ public class PersistentExactSceneOnlyObject : MonoBehaviour
         DontDestroyOnLoad(this);
         wasCollected = false;
         this.gameObject.transform.position = initialPosition;
+        this.gameObject.SetActive(false);
     }
 
     public void RefreshObjects(Scene unloadedScene, Scene loadedScene)

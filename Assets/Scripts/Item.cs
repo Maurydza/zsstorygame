@@ -19,6 +19,10 @@ public class Item : MonoBehaviour
         }
 
         itemRigidbody = GetComponent<Rigidbody2D>();
+        SceneManager.activeSceneChanged += RefreshItems;
+        DontDestroyOnLoad(this);
+        this.gameObject.transform.position = initialPosition;
+        this.gameObject.SetActive(false);
     }
 
     public virtual void Start()
