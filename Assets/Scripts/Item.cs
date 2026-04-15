@@ -17,6 +17,7 @@ public class Item : MonoBehaviour
         SceneManager.activeSceneChanged += RefreshItems;
         DontDestroyOnLoad(this);
         this.gameObject.transform.position = initialPosition;
+        this.gameObject.SetActive(false);
     }
 
     private void Awake()

@@ -129,7 +129,6 @@ public class PlayerMovement : MonoBehaviour
         else if(collision.tag == "initialSpawnpoint")
         {
             PlayerTeleport.targetSpawnID = "initialSpawn";
-            SceneManager.LoadScene(1);
         }
         else if (collision.tag == "s49_in")
         {
